@@ -1,0 +1,4 @@
+#This project uses only Python's standard library 
+#(json, random, os, unittest).
+
+#No external libraries are required.

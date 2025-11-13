@@ -107,15 +107,15 @@ class TerminalIO: #input/output
     # REMINDER: This method doesn't need 'self' either. It only prints the data it receives
     def display_summary(scores):
         print("\n" "PREVIOUS HIGH SCORES (Guessing Game)")
-        print("-" * 50)
+        print("-" * 100)
         if not scores: #if scores is empty
             print("No scores saved yet.")
-            print("-" * 50)
+            print("-" * 100)
 
             return #method ends
     
         print(f"{'Name'} | {'Score'} | {'Dice Count'} | {'Guess'}")    
-        print("-" * 50)
+        print("-" * 100)
 
         for i, entry in enumerate(scores):
             # Checks for missing data to prevent errors
@@ -125,7 +125,7 @@ class TerminalIO: #input/output
             print(f"{entry.get('name', 'Anonymous')} | {entry.get('score', 0)} | {dice_info} | {guess_info}") #don't give error, write Anonymous
             if i >= 2: # Show only the top 3
                 break
-        print("-" * 70)
+        print("-" * 100)
         
     @staticmethod
     # REMINDER: This method is also static, as it only asks a question and returns a True/False answer
@@ -145,9 +145,9 @@ class TerminalIO: #input/output
 def run_game_session(manager):
     
     # PHASE 1: Start
-    print("-" * 50)
+    print("-" * 100)
     print("WELCOME TO THE GUESSING DICE GAME!")
-    print("-" * 50)
+    print("-" * 100)
     
     TerminalIO.display_summary(manager.get_high_scores())
     
@@ -165,7 +165,7 @@ def run_game_session(manager):
 
     # Choice Step 1: Number of Dice
     num_dice = TerminalIO.get_user_input_int(
-        prompt=f"How many D{DICE_SIDES} dice do you want to roll ({MIN_DICE}-{MAX_DICE})? ",
+        prompt=f"How many dice do you want to roll? ({MIN_DICE}-{MAX_DICE}): ",
         min_val=MIN_DICE,
         max_val=MAX_DICE
         )
@@ -174,12 +174,12 @@ def run_game_session(manager):
 
     # Choice Step 2: The Guess
     user_guess = TerminalIO.get_user_input_int(
-        prompt=f"What is your guess for the total score (between {min_possible_score} and {max_possible_score})? ",
+        prompt=f"What is your guess for the total score? (between {min_possible_score} and {max_possible_score}): ",
         min_val=min_possible_score,
         max_val=max_possible_score
         )
         
-    print(f"\nRolling {num_dice} D{DICE_SIDES} dice...")
+    print(f"\nRolling {num_dice} dice...")
 
     # PHASE 3: Result
     # Roll the dice
@@ -192,8 +192,8 @@ def run_game_session(manager):
     print(f"YOUR GUESS: {user_guess}")
     print(f"DIFFERENCE: {abs(total_roll - user_guess)}")
     print(f"CONGRATULATIONS, {player_name.upper()}!")
-    print(f"Your Proximity Score is: {final_score} (Max possible score: {max_possible_score})")
-    print("\n" + "-" * 50)
+    print(f"Your Score is: {final_score} (Max possible score: {max_possible_score})")
+    print("\n" + "-" * 100)
         
     # Save the result
     manager.add_score(player_name, final_score, num_dice, user_guess)

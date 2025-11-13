@@ -4,5 +4,35 @@
         "score": 12,
         "dice_count": 3,
         "user_guess": 11
+    },
+    {
+        "name": "Ozan",
+        "score": 6,
+        "dice_count": 2,
+        "user_guess": 11
+    },
+    {
+        "name": "Ülgen",
+        "score": 5,
+        "dice_count": 1,
+        "user_guess": 4
+    },
+    {
+        "name": "Ülgen",
+        "score": 3,
+        "dice_count": 1,
+        "user_guess": 5
+    },
+    {
+        "name": "Åsa",
+        "score": 16,
+        "dice_count": 5,
+        "user_guess": 28
+    },
+    {
+        "name": "Åke",
+        "score": 16,
+        "dice_count": 4,
+        "user_guess": 22
     }
 ]
