@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Ülgen",
+        "score": 15,
+        "dice_count": 5,
+        "user_guess": 30
+    },
+    {
+        "name": "Ozan",
+        "score": 1,
+        "dice_count": 1,
+        "user_guess": 6
+    }
+]
