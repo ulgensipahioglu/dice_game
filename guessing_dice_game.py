@@ -47,6 +47,26 @@ class GameManager:
             # while preserving special characters(åöäçü)
             json.dump(self.scores, f, indent=4, ensure_ascii=False) 
             
+    # Simulates dice rolling
+    def roll_dice(self, num_dice, sides = 6):
+        rolls = [random.randint(1, sides) for _ in range(num_dice)]
+        # num_dice: How many dice to roll
+        # sides: How many sides the die has (default 6)
+        # Rolls 1 to sides for num_dice times
+        total_score = sum(rolls)
+        return total_score, rolls #in a tuple
+        
+    def calculate_guess_score(self):
+        
+    def add_score(self):
+        
+    def high_scores(self):
+        
+class TerminalIO: #input/output
+    
+    
+        
+            
     
             
 
