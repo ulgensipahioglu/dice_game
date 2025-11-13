@@ -2,7 +2,7 @@ import json
 import random
 import os
 
-# Constant file name. Values that should not change during program execution are written in capital letters
+# file to store results
 DATA_FILE = "scores.json" 
 
 
@@ -15,7 +15,7 @@ class GameManager:
     
         
         '''
-        REMINDER
+        REMINDER FOR ME
         Methods preceded by a single underscore (_) are internal/helper methods (like private in Java)
         That MUST NOT be called from outside the class.
         These are used only to assist other methods within the class (e.g., __init__ or add_score)
@@ -54,9 +54,9 @@ class GameManager:
         # sides: How many sides the die has (default 6)
         # Rolls 1 to sides for num_dice times
         total_score = sum(rolls)
-        return total_score, rolls #in a tuple
+        return total_score, rolls
         
-     # The main formula for calculating the score: The closer the guess, the better the score
+     # The main formula for calculating the score: The closer the guess, the better the score.
     def calculate_guess_score(self, total_roll, user_guess, max_possible_score):
         # Find the absolute difference between the actual result and the guess
         difference = abs(total_roll - user_guess)
