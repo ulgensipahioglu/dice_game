@@ -42,7 +42,8 @@ class GameManager:
             
     # Simulates dice rolling
     def roll_dice(self, num_dice, sides = 6):
-        rolls = [random.randint(1, sides) for _ in range(num_dice)]
+        rolls = [random.randint(1, sides) 
+            for _ in range(num_dice)]
         # num_dice: How many dice to roll
         # sides: How many sides the die has (default 6)
         # Rolls 1 to sides for num_dice times
@@ -73,7 +74,7 @@ class GameManager:
     def get_high_scores(self):
         # Sorts scores from high to low based on score
         sorted_scores = sorted(self.scores, key=lambda x: x['score'], reverse=True)
-        return sorted_scores#[:count]
+        return sorted_scores
 
         
 class TerminalIO: #input/output
@@ -100,32 +101,32 @@ class TerminalIO: #input/output
     # REMINDER: This method doesn't need 'self' either. It only prints the data it receives
     def display_summary(scores):
         print("\n" "PREVIOUS HIGH SCORES (Guessing Game)")
-        print("-" * 100)
+        print("-" * 70)
         if not scores: #if scores is empty
             print("No scores saved yet.")
-            print("-" * 100)
+            print("-" * 70)
 
             return #method ends
     
         print(f"{'Name'} | {'Score'} | {'Dice Count'} | {'Guess'}")    
-        print("-" * 100)
+        print("-" * 70)
 
         for i, entry in enumerate(scores):
             # Checks for missing data to prevent errors
             dice_info = entry.get('dice_count', 'Unknown') #don't give error, write unknown
-            guess_info = entry.get('user_guess', 'Unknown')#don't give error, write unknown
+            guess_info = entry.get('user_guess', 'Unknown') #don't give error, write unknown
             
-            print(f"{entry.get('name', 'Anonymous')} | {entry.get('score', 0)} | {dice_info} | {guess_info}") #don't give error, write Anonymous
+            print(f"{entry.get('name', 'Anonymous')} |  {entry.get('score', 0)}  |  {dice_info}  |  {guess_info}") #don't give error, write Anonymous
             if i >= 2: # Show only the top 3
                 break
-        print("-" * 100)
+        print("-" * 70)
         
     @staticmethod
     # REMINDER: This method is also static, as it only asks a question and returns a True/False answer
     # Asks the user "we play again?"
     def prompt_restart():
         while True: #if answer is not yes or no, loop keeps going
-            restart = input("\nDo you want to play again (yes/no)? ")
+            restart = input("\nDo you want to play again? (yes/no): ")
             if restart == 'yes':
                 return True
             elif restart == 'no':
@@ -138,9 +139,9 @@ class TerminalIO: #input/output
 def run_game_session(manager):
     
     # PHASE 1: Start
-    print("-" * 100)
+    print("-" * 70)
     print("WELCOME TO THE GUESSING DICE GAME!")
-    print("-" * 100)
+    print("-" * 70)
     
     TerminalIO.display_summary(manager.get_high_scores())
     
@@ -186,7 +187,7 @@ def run_game_session(manager):
     print(f"DIFFERENCE: {abs(total_roll - user_guess)}")
     print(f"CONGRATULATIONS, {player_name.upper()}!")
     print(f"Your Score is: {final_score} (Max possible score: {max_possible_score})")
-    print("\n" + "-" * 100)
+    print("\n" + "-" * 70)
         
     # Save the result
     manager.add_score(player_name, final_score, num_dice, user_guess)

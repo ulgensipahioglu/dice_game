@@ -46,7 +46,7 @@ class TestGame(unittest.TestCase):
         self.assertEqual(sorted_scores[0]["name"], "B")
         self.assertEqual(sorted_scores[1]["name"], "C")
         self.assertEqual(sorted_scores[2]["name"], "A")
-
+        
         
 if __name__ == '__main__':
     unittest.main()

@@ -1,8 +1,14 @@
 [
     {
-        "name": "Ülgen",
-        "score": 12,
-        "dice_count": 3,
+        "name": "Ulgen",
+        "score": 4,
+        "dice_count": 1,
+        "user_guess": 5
+    },
+    {
+        "name": "Ozan",
+        "score": 9,
+        "dice_count": 2,
         "user_guess": 11
     }
 ]
