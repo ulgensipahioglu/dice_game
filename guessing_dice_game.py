@@ -13,13 +13,6 @@ class GameManager:
     def __init__(self):
         self.scores = self._load_data()
     
-        
-        '''
-        REMINDER FOR ME
-        Methods preceded by a single underscore (_) are internal/helper methods (like private in Java)
-        That MUST NOT be called from outside the class.
-        These are used only to assist other methods within the class (e.g., __init__ or add_score)
-       '''
     #Reads saved scores from the file. Handles missing or corrupt files
     def _load_data(self):
         try:
