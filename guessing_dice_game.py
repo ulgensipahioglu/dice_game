@@ -56,20 +56,31 @@ class GameManager:
         total_score = sum(rolls)
         return total_score, rolls #in a tuple
         
-    def calculate_guess_score(self):
+     # The main formula for calculating the score: The closer the guess, the better the score
+    def calculate_guess_score(self, total_roll, user_guess, max_possible_score):
+        # Find the absolute difference between the actual result and the guess
+        difference = abs(total_roll - user_guess)
+        max_point = max_possible_score
+        # Score = Max Points - Difference. If difference is 0, max points are achieved.
+        final_score = max(0, max_point - difference) #Take the maximum of two numbers
+        return final_score
+    
+    # Adds a new score to the list and saves the file     
+    def add_score(self, name, score, num_dice, guess):
+        new_entry = {
+            "name": name,
+            "score": score,
+            "dice_count": num_dice,
+            "user_guess": guess
+        }
+        self.scores.append(new_entry)
+        self._save_data()
         
-    def add_score(self):
-        
+    # Finds and sorts the highest scores
     def high_scores(self):
+        # Sorts scores from high to low based on score
+        sorted_scores = sorted(self.scores, key=lambda x: x['score'], reverse=True)
+        return sorted_scores
+
         
 class TerminalIO: #input/output
-    
-    
-        
-            
-    
-            
-
-   
-            
-            
