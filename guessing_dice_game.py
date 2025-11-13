@@ -85,7 +85,7 @@ class TerminalIO: #input/output
     # REMINDER: This method doesn't need 'self' because it doesn't use any class data.
     # It just takes input and returns a value, making it independent and clean.
     def get_user_input_int(prompt, min_val=1, max_val=100):
-        # Asks the user for a number and keeps trying until correct (Error Handling).
+        # Asks the user for a number and keeps trying until correct
         while True:
             try:
                 user_input = input(prompt)
