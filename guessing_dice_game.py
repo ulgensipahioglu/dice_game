@@ -56,7 +56,7 @@ class GameManager:
         difference = abs(total_roll - user_guess)
         max_point = max_possible_score
         # Score = Max Points - Difference. If difference is 0, max points are achieved
-        final_score = max(0, max_point - difference) #Take the bigger than 0
+        final_score = max(0, max_point - difference) #Take the big one
         return final_score
     
     # Adds a new score to the list and saves the file     

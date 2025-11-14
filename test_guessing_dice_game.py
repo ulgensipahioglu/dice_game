@@ -22,10 +22,10 @@ class TestGame(unittest.TestCase):
             self.assertTrue(1 <= r <= 6)
         
 
-    # Perfect guess should return max points
+    # Perfect guess should return max points (difference is 0 )
     def test_calculate_guess_score(self):
         score = self.manager.calculate_guess_score(10,10,20)
-        self.assertEqual(score, 20)
+        self.assertEqual(score, 20) 
         
     # Save score
     def test_add_score_saves(self):
